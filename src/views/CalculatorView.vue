@@ -276,6 +276,12 @@ export default {
       let c = new calc.Calculator()
       this.result = c.calculate(s,this.rule)
 
+      // 假设和牌的牌是 this.agariPai() 返回的结果
+      const agariPai = this.agariPai(); // 根据你的代码中的 agariPai() 方法来获取和牌的牌
+      if (agariPai && agariPai.type === '红宝牌') {
+      this.result.han += 1; // 如果和牌的牌是红宝牌，增加番数
+      }
+
       if(this.agariWay=='tsumo'){
         this.result.point1 += 100*this.ponba;
         this.result.point2 += 100*this.ponba;
